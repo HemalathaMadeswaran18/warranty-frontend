@@ -13,7 +13,7 @@ const Dashboard = ({ onLogout }) => {
 
     const fetchWarranties = () => {
         const token = localStorage.getItem('token');
-        fetch('http://localhost:8080/api/warranties', {
+        fetch('https://warrantyvault.onrender.com/api/warranties', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -29,7 +29,7 @@ const Dashboard = ({ onLogout }) => {
 
         const token = localStorage.getItem('token');
 
-        const res = await fetch(`http://localhost:8080/api/warranties/${id}`, {
+        const res = await fetch(`https://warrantyvault.onrender.com/api/warranties/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -49,7 +49,7 @@ const Dashboard = ({ onLogout }) => {
 
     const handleSaveEdit = async () => {
         const token = localStorage.getItem('token');
-        const res = await fetch(`http://localhost:8080/api/warranties/${editWarranty.id}`, {
+        const res = await fetch(`https://warrantyvault.onrender.com/api/${editWarranty.id}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -70,7 +70,7 @@ const Dashboard = ({ onLogout }) => {
     const downloadFile = async (id) => {
         const token = localStorage.getItem('token');
         try {
-            const response = await fetch(`http://localhost:8080/api/warranties/${id}/download`, {
+            const response = await fetch(`https://warrantyvault.onrender.com/api/${id}/download`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

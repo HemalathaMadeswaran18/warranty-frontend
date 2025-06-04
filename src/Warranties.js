@@ -5,7 +5,7 @@ const Warranties = () => {
     const [warranties, setWarranties] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/warranties', {
+        axios.get('https://warrantyvault.onrender.com/api/warranties', {
             headers: {
                 Authorization: 'Bearer <YOUR_JWT_TOKEN>'
             }
@@ -27,7 +27,7 @@ const Warranties = () => {
                         <p><strong>Retailer:</strong> {w.retailer}</p>
                         {w.documentPath && (
                             <a
-                                href={`http://localhost:8080/api/warranties/${w.id}/download`}
+                                href={`https://warrantyvault.onrender.com/api/${w.id}/download`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

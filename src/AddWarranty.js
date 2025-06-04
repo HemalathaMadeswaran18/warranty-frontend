@@ -14,7 +14,7 @@ const AddWarranty = ({ onAdd }) => {
         const token = localStorage.getItem('token');
 
         // Step 1: Send warranty data as JSON
-        const warrantyRes = await fetch('http://localhost:8080/api/warranties', {
+        const warrantyRes = await fetch('https://warrantyvault.onrender.com/api/warranties', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const AddWarranty = ({ onAdd }) => {
             const formData = new FormData();
             formData.append('file', file);
 
-            const fileUploadRes = await fetch(`http://localhost:8080/api/warranties/${newWarranty.id}/upload`, {
+            const fileUploadRes = await fetch(`https://warrantyvault.onrender.com/api/warranties/${newWarranty.id}/upload`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`
